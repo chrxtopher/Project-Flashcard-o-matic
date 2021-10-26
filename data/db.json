@@ -13,22 +13,6 @@
   ],
   "cards": [
     {
-      "deckId": 1,
-      "id": 1
-    },
-    {
-      "deckId": 1,
-      "id": 2
-    },
-    {
-      "deckId": 1,
-      "id": 3
-    },
-    {
-      "deckId": 1,
-      "id": 4
-    },
-    {
       "front": "sample sample sample",
       "back": "sample sample sample",
       "deckId": 1,
@@ -39,12 +23,6 @@
       "back": "sample sample sample",
       "deckId": 1,
       "id": 6
-    },
-    {
-      "front": "",
-      "back": "",
-      "deckId": 1,
-      "id": 7
     },
     {
       "front": "sample",

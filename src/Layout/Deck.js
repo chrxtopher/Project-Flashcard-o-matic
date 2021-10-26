@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { readDeck, deleteDeck } from "../utils/api/index";
+import { readDeck, deleteDeck, deleteCard } from "../utils/api/index";
 import { useParams, useHistory, Link } from "react-router-dom";
 
 function Deck() {
@@ -19,14 +19,27 @@ function Deck() {
     return <h1>Loading deck information...</h1>;
   }
 
-  const handleDeleteDeck = (event) => {
-    const certain = window.confirm("Are you sure you want to delete this deck");
+  const handleDeleteDeck = () => {
+    const certain = window.confirm(
+      "Are you sure you want to delete this deck?"
+    );
 
     if (certain) {
       deleteDeck(deckId);
       history.push("/");
     }
   };
+
+  function handleDeleteCard(cardId) {
+    const certain = window.confirm(
+      "Are you sure you want to delete this card?"
+    );
+
+    if (certain) {
+      deleteCard(cardId);
+      window.location.reload(false);
+    }
+  }
 
   const cardList = deck.cards.map((card) => {
     return (
@@ -41,10 +54,17 @@ function Deck() {
             </div>
           </div>
           <div className="mt-3 float-right">
-            <button className="btn btn-warning border border-dark mr-1">
+            <button
+              type="button"
+              className="btn btn-warning border border-dark mr-1"
+            >
               Edit
             </button>
-            <button className="btn btn-danger border border-dark">
+            <button
+              type="button"
+              className="btn btn-danger border border-dark"
+              onClick={() => handleDeleteCard(card.id)}
+            >
               Delete
             </button>
           </div>
