@@ -44,13 +44,13 @@
       "front": "What path will match the follow Route?\n<Route>\n  <NotFound />\n</Route>",
       "back": "All paths. A route with no path matches all URL's",
       "deckId": 2,
-      "id": 4
+      "id": 1
     },
     {
       "front": "What does <Switch> do?",
       "back": "Renders the first matching child <Route> ",
       "deckId": 2,
-      "id": 5
+      "id": 2
     },
     {
       "cards": [],
