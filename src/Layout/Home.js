@@ -14,10 +14,10 @@ function Home() {
     <div>
       <button
         type="button"
-        className="btn btn-lg btn-primary"
+        className="btn btn-lg btn-primary border border-dark"
         onClick={handleCreateDeck}
       >
-        Create Deck
+        Create New Deck
       </button>
       <DeckList />
     </div>

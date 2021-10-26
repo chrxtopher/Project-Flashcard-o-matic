@@ -4,7 +4,53 @@
       "name": "Test Deck 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "id": 1
+    },
+    {
+      "name": "Test Deck 2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "id": 2
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "deckId": 1,
+      "id": 1
+    },
+    {
+      "deckId": 1,
+      "id": 2
+    },
+    {
+      "deckId": 1,
+      "id": 3
+    },
+    {
+      "deckId": 1,
+      "id": 4
+    },
+    {
+      "front": "sample sample sample",
+      "back": "sample sample sample",
+      "deckId": 1,
+      "id": 5
+    },
+    {
+      "front": "sample sample sample",
+      "back": "sample sample sample",
+      "deckId": 1,
+      "id": 6
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 1,
+      "id": 7
+    },
+    {
+      "front": "sample",
+      "back": "sample sample sample",
+      "deckId": 1,
+      "id": 8
+    }
+  ]
 }
