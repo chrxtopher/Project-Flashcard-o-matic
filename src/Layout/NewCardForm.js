@@ -58,9 +58,19 @@ function NewCardForm({ deck }) {
       </div>
       <div>
         <Link to={`/decks/${deck.id}`}>
-          <button>Done</button>
+          <button
+            type="button"
+            className="btn btn-secondary border border-dark"
+          >
+            Done
+          </button>
         </Link>
-        <button type="submit">Save</button>
+        <button
+          type="submit"
+          className="btn btn-primary border border-dark ml-1"
+        >
+          Save
+        </button>
       </div>
     </form>
   );
