@@ -52,12 +52,12 @@ function CreateDeck() {
             onChange={handleDeckDescChange}
           ></textarea>
         </div>
-        <a className="btn btn-outline-danger" href="/" role="button">
+        <a className="btn btn-danger border border-dark" href="/" role="button">
           Cancel
         </a>
         <button
           type="submit"
-          className="btn btn-primary ml-2"
+          className="btn btn-primary ml-1 border border-dark"
           onClick={handleSubmit}
         >
           Submit
