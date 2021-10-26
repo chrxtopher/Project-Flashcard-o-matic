@@ -1,6 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { readDeck, deleteDeck } from "../utils/api/index";
+import { useParams, useHistory } from "react-router-dom";
 
 function Deck() {
+  const [deck, setDeck] = useState();
+  const { deckId } = useParams();
+  const history = useHistory();
+
+  useEffect(() => {
+    async function loadDeck() {
+      const currentDeck = await readDeck(deckId);
+      setDeck(currentDeck);
+    }
+    loadDeck();
+  }, [deckId]);
+
+  if (!deck) {
+    return <h1>Loading deck information...</h1>;
+  }
+
+  const handleDeleteDeck = (event) => {
+    const certain = window.confirm("Are you sure you want to delete this deck");
+
+    if (certain) {
+      deleteDeck(deckId);
+      history.push("/");
+    }
+  };
+
   return (
     <div>
       <nav aria-label="breadcrumb">
@@ -8,17 +35,12 @@ function Deck() {
           <li className="breadcrumb-item">
             <a href="/">Home</a>
           </li>
-          <li className="breadcrumb-item active">placeholder</li>
+          <li className="breadcrumb-item active">{deck.name}</li>
         </ol>
       </nav>
       <div className="mb-3">
-        <h2 className="display-4">name placeholder</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
+        <h2 className="display-4">{deck.name}</h2>
+        <p>{deck.description}</p>
         <button type="button" className="btn btn-warning border border-dark">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,6 +89,7 @@ function Deck() {
         <button
           type="button"
           className="btn btn-danger float-right border border-dark"
+          onClick={handleDeleteDeck}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

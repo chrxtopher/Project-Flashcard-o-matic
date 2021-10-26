@@ -11,24 +11,14 @@
       "id": 2
     },
     {
+      "name": "Test Name For Deck",
+      "description": "Test description for a deck.",
       "id": 3
     },
     {
+      "name": "Test Name For Deck",
+      "description": "Test Test Test",
       "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "name": "Test",
-      "description": "Test again...",
-      "id": 8
     }
   ],
   "cards": [
