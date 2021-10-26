@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import DeckList from "./DeckList";
 
 function Home() {
   const history = useHistory();
@@ -18,6 +19,7 @@ function Home() {
       >
         Create Deck
       </button>
+      <DeckList />
     </div>
   );
 }
