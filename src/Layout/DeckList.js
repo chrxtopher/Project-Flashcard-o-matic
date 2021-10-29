@@ -92,7 +92,7 @@ function DeckList() {
     );
   });
 
-  return <div className="mt-3">{deckList}</div>;
+  return <div className="my-3">{deckList}</div>;
 }
 
 export default DeckList;
