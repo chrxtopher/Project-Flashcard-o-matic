@@ -12,7 +12,7 @@
     },
     {
       "name": "Test Name For Deck",
-      "description": "This description is being updated. Let's try this again. Test Test Test",
+      "description": "This description is being updated. Let's try this again. Test Test Test. Test again",
       "id": 3
     }
   ],
@@ -46,6 +46,18 @@
       "back": "Renders the first matching child <Route> ",
       "deckId": 2,
       "id": 5
+    },
+    {
+      "front": "This is a card front that I am adding to edit later. This is the updated card front.",
+      "back": "This is a card back that I am adding to edit later. This is the updated card back.",
+      "deckId": 3,
+      "id": 6
+    },
+    {
+      "front": "I'm adding this as another test for the edit button. Sample update.",
+      "back": "I'm adding this as another test for the edit button. Sample update.",
+      "deckId": 3,
+      "id": 7
     }
   ]
 }

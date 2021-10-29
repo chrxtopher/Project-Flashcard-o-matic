@@ -31,8 +31,6 @@ function EditDeck({ deck, setDeck }) {
     updateDeck(deck).then(() => history.push(`/decks/${deckId}`));
   };
 
-  ////////
-
   return (
     <div>
       <h2 className="display-4">Edit Deck</h2>

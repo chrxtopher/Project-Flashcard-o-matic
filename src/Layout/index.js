@@ -7,9 +7,11 @@ import CreateDeck from "./CreateDeck";
 import Deck from "./Deck";
 import AddCard from "./AddCard";
 import EditDeck from "./EditDeck";
+import EditCard from "./EditCard";
 
 function Layout() {
   const [deck, setDeck] = useState();
+  const [card, setCard] = useState();
 
   //////
   return (
@@ -31,6 +33,14 @@ function Layout() {
           </Route>
           <Route exact path="/decks/:deckId/cards/new">
             <AddCard deck={deck} setDeck={setDeck} />
+          </Route>
+          <Route path="/decks/:deckId/cards/:cardId/edit">
+            <EditCard
+              card={card}
+              deck={deck}
+              setCard={setCard}
+              setDeck={setDeck}
+            />
           </Route>
           <Route>
             <NotFound />
