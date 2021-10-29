@@ -23,17 +23,17 @@ function AddCard({ deck, setDeck }) {
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="breadcrumb-item">
-            <a href={`/decks/${deck.id}`}>{deck.name}</a>
+            <Link to={`/decks/${deck.id}`}>{deck.name}</Link>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
-            Data
+            Add Card
           </li>
         </ol>
       </nav>
-      <h2>{deck.name}: New Card</h2>
+      <h2>{deck.name}: Add Card</h2>
       <div className="mt-3">
         <NewCardForm deck={deck} />
       </div>

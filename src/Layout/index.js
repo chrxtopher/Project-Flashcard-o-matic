@@ -6,6 +6,7 @@ import Home from "./Home";
 import CreateDeck from "./CreateDeck";
 import Deck from "./Deck";
 import AddCard from "./AddCard";
+import EditDeck from "./EditDeck";
 
 function Layout() {
   const [deck, setDeck] = useState();
@@ -24,6 +25,9 @@ function Layout() {
           </Route>
           <Route exact path="/decks/:deckId">
             <Deck />
+          </Route>
+          <Route path="/decks/:deckId/edit">
+            <EditDeck deck={deck} setDeck={setDeck} />
           </Route>
           <Route exact path="/decks/:deckId/cards/new">
             <AddCard deck={deck} setDeck={setDeck} />

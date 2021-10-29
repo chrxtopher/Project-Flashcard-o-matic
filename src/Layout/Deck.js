@@ -47,10 +47,10 @@ function Deck() {
         <div className="card-body">
           <div className="row">
             <div className="col">
-              <p className="card-text border-right">Q: {card.front}</p>
+              <p className="card-text border-right">{card.front}</p>
             </div>
             <div className="col">
-              <p className="card-text">A: {card.back}</p>
+              <p className="card-text">{card.back}</p>
             </div>
           </div>
           <div className="mt-3 float-right">
@@ -86,9 +86,12 @@ function Deck() {
       <div className="mb-3">
         <h2 className="display-4">{deck.name}</h2>
         <p>{deck.description}</p>
-        <button type="button" className="btn btn-warning border border-dark">
-          Edit
-        </button>
+        <Link to={`/decks/${deckId}/edit`}>
+          <button type="button" className="btn btn-warning border border-dark">
+            Edit
+          </button>
+        </Link>
+
         <button
           type="button"
           className="btn btn-success border border-dark ml-1"
