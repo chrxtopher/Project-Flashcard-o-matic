@@ -48,6 +48,18 @@ function Study() {
       );
   }
 
+  if (!deck) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (view.max < 3) {
+    return <NotEnoughCards deck={deck} />;
+  }
+
+  //////////////////
+  //HANDLERS BELOW//
+  //////////////////
+
   const handleFlip = () => {
     setView({
       ...view,
@@ -78,13 +90,9 @@ function Study() {
     }
   };
 
-  if (!deck) {
-    return <h1>Loading...</h1>;
-  }
-
-  if (view.max < 3) {
-    return <NotEnoughCards deck={deck} />;
-  }
+  ////////////////
+  //RETURN BELOW//
+  ////////////////
 
   return (
     <div>

@@ -6,6 +6,10 @@ function CreateDeck() {
   const [newDeck, setNewDeck] = useState({});
   const history = useHistory();
 
+  //////////////////
+  //HANDLERS BELOW//
+  //////////////////
+
   const handleDeckNameChange = (event) => {
     setNewDeck({ ...newDeck, name: event.target.value });
   };
@@ -19,6 +23,10 @@ function CreateDeck() {
     const response = await createDeck(newDeck);
     history.push(`/decks/${response.id}`);
   }
+
+  ////////////////
+  //RETURN BELOW//
+  ////////////////
 
   return (
     <div>

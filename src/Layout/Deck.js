@@ -19,6 +19,10 @@ function Deck() {
     return <h1>Loading deck information...</h1>;
   }
 
+  //////////////////
+  //HANDLERS BELOW//
+  //////////////////
+
   const handleDeleteDeck = () => {
     const certain = window.confirm(
       "Are you sure you want to delete this deck?"
@@ -42,6 +46,7 @@ function Deck() {
   }
 
   const cardList = deck.cards.map((card) => {
+    //maps each card to have its own view and buttons in the list.
     return (
       <div className="card">
         <div className="card-body">
@@ -93,6 +98,10 @@ function Deck() {
       </div>
     );
   });
+
+  ////////////////
+  //RETURN BELOW//
+  ////////////////
 
   return (
     <div>

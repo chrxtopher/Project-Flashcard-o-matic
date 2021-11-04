@@ -14,6 +14,10 @@ function DeckList() {
     loadDecks();
   }, []);
 
+  //////////////////
+  //HANDLERS BELOW//
+  //////////////////
+
   function handleDeleteDeck(deckId) {
     const certain = window.confirm(
       "Are you sure you want to delete this deck?"
@@ -27,13 +31,23 @@ function DeckList() {
   }
 
   const deckList = decks.map((deck) => {
+    //maps each deck to have its own view and buttons in the list.
+
+    const numberOfCards = () => {
+      if (deck.cards.length === 1) {
+        return `${deck.cards.length} card`;
+      } else {
+        return `${deck.cards.length} cards`;
+      }
+    };
+
     return (
       <div className="card mb-1">
         <div className="card-body">
           <div className="card-title">
             <h4>{deck.name}</h4>
             <div className="mb-3">
-              <p className="float-right">{deck.cards.length} cards</p>
+              <p className="float-right">{numberOfCards()}</p>
             </div>
           </div>
           <div className="card-text">{deck.description}</div>

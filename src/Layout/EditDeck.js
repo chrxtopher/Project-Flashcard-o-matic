@@ -17,6 +17,9 @@ function EditDeck({ deck, setDeck }) {
   if (!deck) {
     return <h1>Loading deck information...</h1>;
   }
+  //////////////////
+  //HANDLERS BELOW//
+  //////////////////
 
   const handleDeckNameChange = (event) => {
     setDeck({ ...deck, name: event.target.value });
@@ -30,6 +33,10 @@ function EditDeck({ deck, setDeck }) {
     event.preventDefault();
     updateDeck(deck).then(() => history.push(`/decks/${deckId}`));
   };
+
+  ////////////////
+  //RETURN BELOW//
+  ////////////////
 
   return (
     <div>

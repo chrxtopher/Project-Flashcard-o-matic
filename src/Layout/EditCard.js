@@ -23,6 +23,14 @@ function EditCard({ card, setCard, deck, setDeck }) {
     loadCard();
   }, [cardId, setCard]);
 
+  if (!card) {
+    return <h1>Loading...</h1>;
+  }
+
+  //////////////////
+  //HANDLERS BELOW//
+  //////////////////
+
   const handleFrontChange = (event) => {
     setCard({ ...card, front: event.target.value });
   };
@@ -38,11 +46,10 @@ function EditCard({ card, setCard, deck, setDeck }) {
     );
   };
 
-  if (!card) {
-    return <h1>Loading...</h1>;
-  }
+  ////////////////
+  //RETURN BELOW//
+  ////////////////
 
-  //////
   return (
     <div>
       <nav aria-label="breadcrumb">

@@ -7,6 +7,10 @@ function NewCardForm({ deck }) {
   const [backSide, setBackSide] = useState();
   const [card, setCard] = useState({});
 
+  //////////////////
+  //HANDLERS BELOW//
+  //////////////////
+
   const handleFrontChange = (event) => {
     setCard({ ...card, front: event.target.value });
   };
@@ -27,6 +31,10 @@ function NewCardForm({ deck }) {
       deckId: deck.id,
     });
   };
+
+  ////////////////
+  //RETURN BELOW//
+  ////////////////
 
   return (
     <form onSubmit={handleSubmit}>
