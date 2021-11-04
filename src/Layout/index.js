@@ -8,12 +8,12 @@ import Deck from "./Deck";
 import AddCard from "./AddCard";
 import EditDeck from "./EditDeck";
 import EditCard from "./EditCard";
+import Study from "./Study";
 
 function Layout() {
   const [deck, setDeck] = useState();
   const [card, setCard] = useState();
 
-  //////
   return (
     <>
       <Header />
@@ -28,7 +28,10 @@ function Layout() {
           <Route exact path="/decks/:deckId">
             <Deck />
           </Route>
-          <Route path="/decks/:deckId/edit">
+          <Route path="/decks/:deckId/study">
+            <Study />
+          </Route>
+          <Route exact path="/decks/:deckId/edit">
             <EditDeck deck={deck} setDeck={setDeck} />
           </Route>
           <Route exact path="/decks/:deckId/cards/new">
