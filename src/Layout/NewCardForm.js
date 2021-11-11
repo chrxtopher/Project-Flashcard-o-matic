@@ -1,42 +1,15 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { createCard } from "../utils/api/index";
+import React from "react";
 
-function NewCardForm({ deck }) {
-  const [card, setCard] = useState({});
-
-  //////////////////
-  //HANDLERS BELOW//
-  //////////////////
-
-  const handleFrontChange = (event) => {
-    setCard({ ...card, front: event.target.value });
-  };
-
-  const handleBackChange = (event) => {
-    setCard({ ...card, back: event.target.value });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    async function loadCard() {
-      await createCard(deck.id, card);
-    }
-    loadCard();
-    setCard({
-      ...card,
-      front: "",
-      back: "",
-      deckId: deck.id,
-    });
-  };
-
-  ////////////////
-  //RETURN BELOW//
-  ////////////////
-
+function NewCardForm({
+  handleFrontChange,
+  handleBackChange,
+  handleSaveClick,
+  handleDoneClick,
+  cardFront,
+  cardBack,
+}) {
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div className="form-group">
         <label htmlFor="cardFront" className="form-label">
           Front
@@ -47,7 +20,7 @@ function NewCardForm({ deck }) {
           rows="2"
           placeholder="Question"
           onChange={handleFrontChange}
-          value={card.front}
+          value={cardFront}
         ></textarea>
       </div>
       <div className="form-group">
@@ -60,21 +33,21 @@ function NewCardForm({ deck }) {
           rows="2"
           placeholder="Answer"
           onChange={handleBackChange}
-          value={card.back}
+          value={cardBack}
         ></textarea>
       </div>
       <div>
-        <Link to={`/decks/${deck.id}`}>
-          <button
-            type="button"
-            className="btn btn-secondary border border-dark"
-          >
-            Done
-          </button>
-        </Link>
+        <button
+          type="button"
+          className="btn btn-secondary border border-dark"
+          onClick={handleDoneClick}
+        >
+          Done
+        </button>
         <button
           type="submit"
           className="btn btn-primary border border-dark ml-1"
+          onClick={handleSaveClick}
         >
           Save
         </button>

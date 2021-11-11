@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import { readDeck } from "../utils/api";
-import { useParams, Link } from "react-router-dom";
+import { readDeck, createCard } from "../utils/api";
+import { useParams, Link, useHistory } from "react-router-dom";
 import NewCardForm from "./NewCardForm";
 
-function AddCard({ deck, setDeck }) {
+function AddCard({ deck, setDeck, card, setCard }) {
   const { deckId } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     async function loadDeck() {
@@ -13,6 +14,35 @@ function AddCard({ deck, setDeck }) {
     }
     loadDeck();
   }, [deckId, setDeck]);
+
+  //////////////////
+  //HANDLERS BELOW//
+  //////////////////
+
+  const handleFrontChange = (event) => {
+    setCard({ ...card, front: event.target.value });
+  };
+
+  const handleBackChange = (event) => {
+    setCard({ ...card, back: event.target.value });
+  };
+
+  const handleDoneClick = () => {
+    history.push(`/decks/${deck.id}`);
+  };
+
+  const handleSaveClick = (event) => {
+    event.preventDefault();
+    async function loadCard() {
+      await createCard(deckId, card);
+    }
+    loadCard();
+    setCard({
+      front: "",
+      back: "",
+      deckId: deck.id,
+    });
+  };
 
   if (!deck) {
     return <p>Loading...</p>;
@@ -51,7 +81,14 @@ function AddCard({ deck, setDeck }) {
       </nav>
       <h2>{deck.name}: Add Card</h2>
       <div className="mt-3">
-        <NewCardForm deck={deck} />
+        <NewCardForm
+          handleFrontChange={handleFrontChange}
+          handleBackChange={handleBackChange}
+          handleSaveClick={handleSaveClick}
+          handleDoneClick={handleDoneClick}
+          cardFront={card.front}
+          cardBack={card.back}
+        />
       </div>
     </div>
   );

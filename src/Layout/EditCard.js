@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams, useHistory } from "react-router";
 import { updateCard, readCard, readDeck } from "../utils/api/index";
 import { Link } from "react-router-dom";
+import NewCardForm from "./NewCardForm";
 
 function EditCard({ card, setCard, deck, setDeck }) {
   const { deckId, cardId } = useParams();
@@ -43,11 +44,9 @@ function EditCard({ card, setCard, deck, setDeck }) {
     setCard({ ...card, back: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const handleUpdate = (event) => {
     event.preventDefault();
-    updateCard(card).then((response) =>
-      history.push(`/decks/${deckId}/cards/${cardId}/edit`)
-    );
+    updateCard(card).then((response) => history.push(`/decks/${deckId}`));
   };
 
   ////////////////
@@ -82,48 +81,13 @@ function EditCard({ card, setCard, deck, setDeck }) {
         </ol>
       </nav>
       <h1 className="display-4">Edit Card</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="cardFront" className="form-label">
-            Front
-          </label>
-          <textarea
-            className="form-control"
-            id="cardFront"
-            rows="2"
-            onChange={handleFrontChange}
-            defaultValue={card.front}
-          ></textarea>
-        </div>
-        <div className="form-group">
-          <label htmlFor="cardBack" className="form-label">
-            Back
-          </label>
-          <textarea
-            className="form-control"
-            id="cardBack"
-            rows="2"
-            onChange={handleBackChange}
-            defaultValue={card.back}
-          ></textarea>
-        </div>
-        <div>
-          <Link to={`/decks/${deckId}`}>
-            <button
-              type="button"
-              className="btn btn-secondary border border-dark"
-            >
-              Done
-            </button>
-          </Link>
-          <button
-            type="submit"
-            className="btn btn-primary border border-dark ml-1"
-          >
-            Save
-          </button>
-        </div>
-      </form>
+      <NewCardForm
+        handleFrontChange={handleFrontChange}
+        handleBackChange={handleBackChange}
+        handleSaveClick={handleUpdate}
+        cardFront={card.front}
+        cardBack={card.back}
+      />
     </div>
   );
 }
