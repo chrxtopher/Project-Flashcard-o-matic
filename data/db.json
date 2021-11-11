@@ -52,6 +52,48 @@
       "back": "This is a card back that I am adding to edit later. This is the updated card back.",
       "deckId": 3,
       "id": 6
+    },
+    {
+      "front": "This is going to be the second card in the deck!",
+      "back": "Here is the answer for testing!",
+      "deckId": 3,
+      "id": 7
+    },
+    {
+      "front": "Here is another question",
+      "back": "here is another answer",
+      "deckId": 3,
+      "id": 8
+    },
+    {
+      "front": "Sample question",
+      "back": "Sample Answer",
+      "deckId": 3,
+      "id": 9
+    },
+    {
+      "front": "Sample question",
+      "back": "Sample answer",
+      "deckId": 3,
+      "id": 10
+    },
+    {
+      "front": "Sample question",
+      "back": "Sample answer",
+      "deckId": 3,
+      "id": 11
+    },
+    {
+      "front": "Sample question",
+      "back": "Sample answer",
+      "deckId": 3,
+      "id": 12
+    },
+    {
+      "front": "Sample question",
+      "back": "Sample Answer",
+      "deckId": 3,
+      "id": 13
     }
   ]
 }

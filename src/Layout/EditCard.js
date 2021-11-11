@@ -96,7 +96,7 @@ function EditCard({ card, setCard, deck, setDeck }) {
             Back
           </label>
           <textarea
-            class="form-control"
+            className="form-control"
             id="cardBack"
             rows="2"
             onChange={handleBackChange}

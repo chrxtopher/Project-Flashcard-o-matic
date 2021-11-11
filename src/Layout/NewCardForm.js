@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { createCard } from "../utils/api/index";
 
 function NewCardForm({ deck }) {
-  const [frontSide, setFrontSide] = useState();
-  const [backSide, setBackSide] = useState();
   const [card, setCard] = useState({});
 
   //////////////////
@@ -26,8 +24,9 @@ function NewCardForm({ deck }) {
     }
     loadCard();
     setCard({
-      front: setFrontSide(""),
-      back: setBackSide(""),
+      ...card,
+      front: "",
+      back: "",
       deckId: deck.id,
     });
   };
@@ -43,12 +42,12 @@ function NewCardForm({ deck }) {
           Front
         </label>
         <textarea
-          class="form-control"
+          className="form-control"
           id="cardFront"
           rows="2"
           placeholder="Question"
           onChange={handleFrontChange}
-          value={frontSide}
+          value={card.front}
         ></textarea>
       </div>
       <div className="form-group">
@@ -56,12 +55,12 @@ function NewCardForm({ deck }) {
           Back
         </label>
         <textarea
-          class="form-control"
+          className="form-control"
           id="cardBack"
           rows="2"
           placeholder="Answer"
           onChange={handleBackChange}
-          value={backSide}
+          value={card.back}
         ></textarea>
       </div>
       <div>
