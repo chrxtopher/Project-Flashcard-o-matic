@@ -12,7 +12,7 @@
     },
     {
       "name": "Test Name For Deck",
-      "description": "This description is being updated. Let's try this again. Test Test Test. Test again",
+      "description": "This description is being updated.",
       "id": 3
     }
   ],
@@ -76,24 +76,6 @@
       "back": "Sample answer",
       "deckId": 3,
       "id": 10
-    },
-    {
-      "front": "Sample question",
-      "back": "Sample answer",
-      "deckId": 3,
-      "id": 11
-    },
-    {
-      "front": "Sample question",
-      "back": "Sample answer",
-      "deckId": 3,
-      "id": 12
-    },
-    {
-      "front": "Sample question",
-      "back": "Sample Answer",
-      "deckId": 3,
-      "id": 13
     }
   ]
 }

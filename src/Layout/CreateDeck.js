@@ -41,7 +41,7 @@ function CreateDeck() {
       <h1 className="display-4">Create Deck</h1>
       <form>
         <div className="form-group">
-          <label for="deckName">Name</label>
+          <label htmlFor="deckName">Name</label>
           <input
             type="text"
             className="form-control"
@@ -51,7 +51,7 @@ function CreateDeck() {
           />
         </div>
         <div className="form-group">
-          <label for="deckDescription">Description</label>
+          <label htmlFor="deckDescription">Description</label>
           <textarea
             className="form-control"
             id="deckDescription"
